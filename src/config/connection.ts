@@ -1,5 +1,5 @@
-import { connect } from "mongoose"
-import  {config} from "dotenv"
+import { connect } from 'mongoose'
+import  {config} from 'dotenv'
 
 config()
 
@@ -8,7 +8,7 @@ export const connectionDB = async ():Promise<void> => {
     const {stringConexion} = process.env
 
     if (stringConexion) {
-     await connect(stringConexion)
+      await connect(stringConexion)
     }
     console.log('DB is connected')
   

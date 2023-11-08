@@ -1,7 +1,7 @@
-import { Router } from "express"
+import { Router } from 'express'
 
-import { create, deleteUserById, findAll, findById, update } from "../controllers/users"
-import { validateBody } from "../middleware/validateBody"
+import { create, deleteUserById, findAll, findById, update } from '../controllers/users'
+import { validateBody } from '../middleware/validateBody'
 
 const routerUser = Router()
 

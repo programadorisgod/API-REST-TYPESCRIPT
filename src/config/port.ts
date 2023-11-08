@@ -1,5 +1,5 @@
 import {createServer, AddressInfo}  from 'net'
- const findPort = (port:number | string): Promise<number> => {
+const findPort = (port:number | string): Promise<number> => {
   return new Promise((resolve, reject) => {
 
     const server = createServer()
@@ -11,8 +11,8 @@ import {createServer, AddressInfo}  from 'net'
       let PORT: number
 
       if (typeof address === 'object' && address !== null) {
-          const {port} = address as AddressInfo
-          PORT= port 
+        const {port} = address as AddressInfo
+        PORT= port 
       }
 
       server.close(()=> {

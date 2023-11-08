@@ -1,5 +1,5 @@
-import { NextFunction, Request, Response } from "express";
-import { handlerError } from "../utils/handlerError";
+import { NextFunction, Request, Response } from 'express'
+import { handlerError } from '../utils/handlerError'
 
 
 export const validateBody = (req:Request, res:Response, next:NextFunction) => {

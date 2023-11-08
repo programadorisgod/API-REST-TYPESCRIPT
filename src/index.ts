@@ -18,9 +18,9 @@ app.use(morgan('dev'))
 
 app.get('/', (req, res) => {
 
-    const data = {metodo: req.method, url :req.url }
+  const data = {metodo: req.method, url :req.url }
 
-    res.status(200).json({msg: 'Welcome to my api TS', data })
+  res.status(200).json({msg: 'Welcome to my api TS', data })
 
 })
 
@@ -30,7 +30,7 @@ app.use(routerUser)
 connectionDB()
 
 findPort(PORT).then(port => {
-    app.listen(port, () => console.log(`App running in the port: ${port}`))
+  app.listen(port, () => console.log(`App running in the port: ${port}`))
 })
-.catch(err => console.log("Erorr:", err))
+  .catch(err => console.log('Erorr:', err))
  
