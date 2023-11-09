@@ -3,6 +3,7 @@ import { Schema, model } from 'mongoose'
 const userSchema = new Schema({
   cliente : {
     type: String,
+    unique: true,
     required: true
   },
   AE: {

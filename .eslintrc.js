@@ -26,10 +26,30 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'import'
   ],
   'rules': {
     '@typescript-eslint/no-explicit-any': 'off',
+    'import/no-unresolved': [
+      'error',
+      {
+        'plugins':[
+          'module-resolve',
+          {
+            'alias': {
+              '@routes': './src/routes',
+              '@controllers': './src/controllers',
+              '@services': './src/services',
+              '@models': './src/models',
+              '@config': './src/config',
+              '@utils': './src/utils',
+              "@interfaces": "./src/interfaces"
+            }
+          }
+        ]
+      }
+    ],
     'indent': [
       'error',
       2
