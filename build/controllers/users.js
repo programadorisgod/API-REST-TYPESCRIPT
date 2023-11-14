@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteUserById = exports.update = exports.create = exports.findAll = exports.findById = void 0;
-const handlerError_1 = require("@utils/handlerError");
-const users_1 = require("@services/users");
+const handlerError_1 = require("../utils/handlerError");
+const users_1 = require("../services/users");
 const findById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { id } = req.params;

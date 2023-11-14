@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
-import { handlerError } from '@utils/handlerError'
-import { createUser, deleteUser, findAllUsers, findByIdUser, updateUser } from '@services/users'
+import { handlerError } from '../utils/handlerError'
+import { createUser, deleteUser, findAllUsers, findByIdUser, updateUser } from '../services/users'
 
 export const findById = async(req:Request, res:Response)=> {
   try {

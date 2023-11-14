@@ -13,8 +13,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteUser = exports.updateUser = exports.findByIdUser = exports.findAllUsers = exports.createUser = void 0;
-const users_1 = __importDefault(require("@models/users"));
-const handlerError_1 = require("@utils/handlerError");
+const users_1 = __importDefault(require("../models/users"));
+const handlerError_1 = require("../utils/handlerError");
 const createUser = (user) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const newUser = yield users_1.default.create(user);

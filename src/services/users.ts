@@ -1,6 +1,6 @@
-import { IUser } from '@interfaces/user.interface'
-import User from '@models/users'
-import { CustomError } from '@utils/handlerError'
+import { IUser } from '../interfaces/user.interface'
+import User from '../models/users'
+import { CustomError } from '../utils/handlerError'
 
 
 export const createUser = async(user:IUser) => {
