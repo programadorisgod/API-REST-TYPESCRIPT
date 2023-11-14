@@ -21,6 +21,7 @@
     "mongoose": "^8.0.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.4.10",
     "@types/cors": "^2.8.16",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
@@ -28,17 +29,15 @@
     "@typescript-eslint/parser": "^6.10.0",
     "eslint": "^8.53.0",
     "eslint-plugin-import": "^2.29.0",
-    "morgan": "^1.10.0",
     "ts-node-dev": "^2.0.0"
   },
-    "_moduleAliases": {
-      "@routes": "src/routes",
-      "@controllers": "src/controllers",
-      "@middlewares": "src/middleware",
-      "@models": "src/models",
-      "@utils": "src/utils",
-      "@config": "src/config",
-      "@services": "src/services"
-    }
-  
+  "_moduleAliases": {
+    "@routes": "src/routes",
+    "@controllers": "src/controllers",
+    "@middlewares": "src/middleware",
+    "@models": "src/models",
+    "@utils": "src/utils",
+    "@config": "src/config",
+    "@services": "src/services"
+  }
 }
