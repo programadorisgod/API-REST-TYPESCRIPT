@@ -1,6 +1,5 @@
 import express, { json, urlencoded } from 'express'
 import cors from 'cors'
-import morgan from 'morgan'
 
 
 import { findPort } from './config/port'
@@ -18,7 +17,7 @@ app.use(cors(
 app.use(urlencoded({ extended: true }))
 app.use(json())
 
-app.use(morgan('dev'))
+
 
 app.get('/', (req, res) => {
 
