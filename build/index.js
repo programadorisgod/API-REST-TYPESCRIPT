@@ -29,19 +29,24 @@ var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const port_1 = require("./config/port");
+const morgan_1 = __importDefault(require("morgan"));
+const port_1 = require("@config/port");
+const connection_1 = require("@config/connection");
+const user_1 = __importDefault(require("@routes/user"));
 const app = (0, express_1.default)();
 const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 4000;
 app.disable('x-powered-by');
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({ origin: '' }));
 app.use((0, express_1.urlencoded)({ extended: true }));
 app.use((0, express_1.json)());
-app.get('/', (_, res) => {
-    res.json({ msg: 'Welcome to my api' });
+app.use((0, morgan_1.default)('dev'));
+app.get('/', (req, res) => {
+    const data = { metodo: req.method, url: req.url };
+    res.status(200).json({ msg: 'Welcome to my api TS', data });
 });
-/*
-app.listen(PORT, () => console.log(`App running in the port: ${PORT}`))*/
+app.use(user_1.default);
+(0, connection_1.connectionDB)();
 (0, port_1.findPort)(PORT).then(port => {
-    app.listen(port, () => console.log(`App running in the port: ${PORT}`));
+    app.listen(port, () => console.log(`App running in the port: ${port}`));
 })
-    .catch(err => console.log("Erorr:", err));
+    .catch(err => console.log('Erorr:', err));

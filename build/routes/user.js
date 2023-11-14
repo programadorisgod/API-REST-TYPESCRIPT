@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const users_1 = require("../controllers/users");
+const validateBody_1 = require("../middleware/validateBody");
+const routerUser = (0, express_1.Router)();
+const path = '/api/v1/users';
+routerUser.get(path, users_1.findAll);
+routerUser.get(`${path}/:id`, users_1.findById);
+routerUser.post(`${path}/create`, validateBody_1.validateBody, users_1.create);
+routerUser.patch(`${path}/update/:id`, validateBody_1.validateBody, users_1.update);
+routerUser.delete(`${path}/delete/:id`, users_1.deleteUserById);
+exports.default = routerUser;

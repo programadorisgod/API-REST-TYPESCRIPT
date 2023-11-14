@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.findPort = void 0;
 const net_1 = require("net");
-console.log(process.cwd());
 const findPort = (port) => {
     return new Promise((resolve, reject) => {
         const server = (0, net_1.createServer)();

@@ -11,7 +11,9 @@ const app = express()
 const PORT:string | number = process.env.PORT ?? 4000
 
 app.disable('x-powered-by')
-app.use(cors())
+app.use(cors(
+{origin: ''}
+))
 app.use(urlencoded({ extended: true }))
 app.use(json())
 
