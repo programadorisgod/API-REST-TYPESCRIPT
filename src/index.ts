@@ -2,9 +2,10 @@ import express, { json, urlencoded } from 'express'
 import cors from 'cors'
 import morgan from 'morgan'
 
-import { findPort } from '../src/config/port'
-import { connectionDB } from '../src/config/connection'
-import routerUser from '../src/routes/user'
+
+import { findPort } from './config/port'
+import { connectionDB } from './config/connection'
+import routerUser from './routes/user'
 
 
 const app = express()
