@@ -29,17 +29,15 @@ var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importStar(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const morgan_1 = __importDefault(require("morgan"));
 const port_1 = require("./config/port");
 const connection_1 = require("./config/connection");
 const user_1 = __importDefault(require("./routes/user"));
 const app = (0, express_1.default)();
 const PORT = (_a = process.env.PORT) !== null && _a !== void 0 ? _a : 4000;
 app.disable('x-powered-by');
-app.use((0, cors_1.default)({ origin: '' }));
+app.use((0, cors_1.default)({ origin: '*' }));
 app.use((0, express_1.urlencoded)({ extended: true }));
 app.use((0, express_1.json)());
-app.use((0, morgan_1.default)('dev'));
 app.get('/', (req, res) => {
     const data = { metodo: req.method, url: req.url };
     res.status(200).json({ msg: 'Welcome to my api TS', data });
