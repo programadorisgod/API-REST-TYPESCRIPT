@@ -5,7 +5,7 @@ ENV PNPM_HOME=/usr/local/bin
 
 WORKDIR /usr/src/app
 
-COPY package.json ./
+COPY package*.json ./
 
 RUN pnpm install
 
