@@ -33,5 +33,5 @@ connectionDB()
 findPort(PORT).then(port => {
   app.listen(port, () => console.log(`App running in the port: ${port}`))
 })
-  .catch(err => console.log('Erorr:', err))
+.catch(err => console.log('Erorr:', err))
  

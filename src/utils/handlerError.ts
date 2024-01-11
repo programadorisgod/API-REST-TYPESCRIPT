@@ -1,5 +1,4 @@
 import {Response } from 'express'
-import { MongooseError } from 'mongoose'
 
 
 export class CustomError extends Error {
@@ -23,13 +22,6 @@ export const handlerError = (err: any, res: Response, message: string = 'Interna
   }else{
     res.status(code).json({ msg: message})
     return
-  }
-
-  if (err instanceof SyntaxError || err instanceof MongooseError)  {
-    res.status(400).json({ msg: err.message })
-  }
-  
-  
-  
+  }  
    
 }
