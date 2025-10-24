@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development ts-node-dev src/index.ts",
+    "dev": "cross-env NODE_ENV=development tsx --watch src/index.ts",
     "build": "tsc",
     "start": "node build/index.js",
     "lint": "eslint --ext .ts src"
@@ -18,20 +18,20 @@
     "dotenv": "16.3.1",
     "express": "4.18.2",
     "module-alias": "^2.2.3",
-    "mongoose": "^8.0.0"
+    "mongoose": "^8.19.2",
+    "morgan": "^1.10.1"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.4.10",
-    "@types/cors": "^2.8.16",
-    "@types/express": "^4.17.21",
-    "@types/morgan": "^1.9.9",
-    "@types/node": "^20.10.6",
-    "@typescript-eslint/eslint-plugin": "^6.10.0",
-    "@typescript-eslint/parser": "^6.10.0",
-    "eslint": "^8.53.0",
-    "eslint-plugin-import": "^2.29.0",
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^5.2.2"
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.24",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^20.19.23",
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "@typescript-eslint/parser": "^6.21.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.32.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
   },
   "_moduleAliases": {
     "@routes": "src/routes",

@@ -1,63 +1,53 @@
-import { IUser } from '../interfaces/user.interface'
-import User from '../models/users'
-import { CustomError } from '../utils/handlerError'
+import { IUser } from "../interfaces/user.interface";
+import User from "../models/users";
+import { CustomError } from "../utils/handlerError";
 
-
-export const createUser = async(user:IUser) => {
+export const createUser = async (user: IUser) => {
   try {
+    const newUser = await User.create(user);
 
-    const newUser = await User.create(user)
-
-    return newUser
-
+    return newUser;
   } catch (error: any) {
-    throw new CustomError(500, 'Error to create user')
+    throw new CustomError(500, "Error to create user");
   }
-}
+};
 
-export const findAllUsers = async()=> {
+export const findAllUsers = async () => {
   try {
+    const users = await User.find();
 
-    const users = await User.find()
-
-    return users
-
+    return users;
   } catch (error) {
-    throw new CustomError(500, 'Error to find users')
+    throw new CustomError(500, "Error to find users");
   }
-}
+};
 
-export const findByIdUser = async(id:string) => {
+export const findByIdUser = async (id: string) => {
   try {
-    const user = await User.findById(id)
-    
-    return user
+    const user = await User.findById(id);
 
-  } catch (error:any) {
-    throw new CustomError(500, 'Error to find user')
+    return user;
+  } catch (error: any) {
+    throw new CustomError(500, "Error to find user");
   }
-}
+};
 
-export const updateUser = async(id:string, user:IUser)=> {
+export const updateUser = async (id: string, user: IUser) => {
   try {
+    const userUpdated = await User.findByIdAndUpdate(id, user, { new: true });
 
-    const userUpdated = await User.findByIdAndUpdate(id, user, {new: true})
-
-    return userUpdated
-
+    return userUpdated;
   } catch (error) {
-    throw new CustomError(500, '')
+    throw new CustomError(500, "");
   }
-}
+};
 
-export const deleteUser = async(id:string)=> {
+export const deleteUser = async (id: string) => {
   try {
+    const userDeleted = await User.findByIdAndDelete(id);
 
-    const userDeleted = await User.findByIdAndDelete(id)
-
-    return userDeleted
-
+    return userDeleted;
   } catch (error) {
-    throw new CustomError(500, 'Error to delete user')
+    throw new CustomError(500, "Error to delete user");
   }
-}
+};
