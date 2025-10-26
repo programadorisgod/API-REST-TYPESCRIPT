@@ -1,15 +1,9 @@
 import { connect } from "mongoose";
-import { config } from "dotenv";
-
-config();
+import { CONEXION_STRING } from "./env";
 
 export const connectionDB = async (): Promise<void> => {
   try {
-    const { stringConexion } = process.env;
-
-    if (stringConexion) {
-      await connect(stringConexion);
-    }
+    await connect(CONEXION_STRING);
     console.log("DB is connected");
   } catch (error) {
     console.log(error);

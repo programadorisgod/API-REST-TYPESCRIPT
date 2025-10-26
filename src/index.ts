@@ -5,9 +5,10 @@ import { findPort } from "./config/port";
 import { connectionDB } from "./config/connection";
 import routerUser from "./routes/user";
 import morgan from "morgan";
+import { PORT as APP_PORT } from "./config/env";
 
 const app = express();
-const PORT: string | number = process.env.PORT ?? 4000;
+const PORT: number | string = APP_PORT ?? 4000;
 
 app.disable("x-powered-by");
 app.use(cors({ origin: "*" }));
