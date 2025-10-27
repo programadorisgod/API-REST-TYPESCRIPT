@@ -1,33 +1,39 @@
-FROM node:20 as build 
+FROM node:22.18.0-alpine3.22 AS base
+WORKDIR /app
 
-RUN corepack enable && corepack prepare pnpm@latest --activate
- 
-ENV PNPM_HOME=/usr/local/bin
-
-WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN pnpm install
-
-COPY  . .
-
-RUN pnpm run build
+RUN npm ci
 
 
+#BUILD
+FROM base AS build
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm run build && npm ci --omit=dev
 
 
-#ETPA 2:Crear una image más pequeñas
+#Release
 
-FROM node:20-alpine
+FROM alpine AS release
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY --from=build /usr/src/app/build ./build
-COPY --from=build /usr/src/app/node_modules ./node_modules
-COPY --from=build /usr/src/app/package*.json ./
+COPY --from=build /app/build ./build
+COPY --from=build /app/node_modules/ ./node_modules
+COPY --from=base /usr/local/bin/node /usr/local/bin/node
 
+RUN apk add --no-cache libstdc++ dumb-init && \
+    addgroup -g 1000 node && adduser -u 1000 -G node -s /bin/sh -D node && \
+    chown -R node:node /app
 
-EXPOSE 4000
+USER node
 
-CMD [ "npm", "start" ]
+EXPOSE 3000
+
+CMD ["dumb-init", "--"]
+ENTRYPOINT [ "node", "build/index.js" ]

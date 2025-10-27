@@ -28,6 +28,8 @@ connectionDB();
 
 findPort(PORT)
   .then((port) => {
-    app.listen(port, () => console.log(`App running in the port: ${port}`));
+    app.listen(port, "0.0.0.0", () =>
+      console.log(`App running in the port: ${port}`),
+    );
   })
   .catch((err) => console.log("Erorr:", err));

@@ -1,1 +1,9 @@
 node_modules/
+build/
+bun.lock
+.gitignore
+dockerfile
+.estilitrc.js
+README.md
+.env
+.env.example
