@@ -38,7 +38,6 @@ export const findAll = async (_req: Request, res: Response) => {
 export const create = async (req: Request, res: Response) => {
     try {
         const user = req.body;
-        console.log(user);
         const newUser = await createUser(user);
 
         res.status(201).json({ newUser });
