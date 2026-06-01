@@ -1,10 +1,10 @@
-# API REST - Sistema de Medidas para Confección de Ropa 📏👔
+# API REST - Sistema de Medidas para Confección de Ropa 
 
-## 📋 Descripción
+##  Descripción
 
 Esta es una API REST desarrollada en TypeScript que permite gestionar una base de datos de medidas corporales para negocios de confección de ropa. La API facilita el almacenamiento, consulta, actualización y eliminación de las medidas de los clientes, optimizando el proceso de toma de medidas y confección de prendas personalizadas.
 
-## 🎯 Propósito
+##  Propósito
 
 Esta API está diseñada específicamente para sastres, modistas y profesionales de la confección que necesitan:
 - Almacenar las medidas corporales completas de sus clientes
@@ -13,7 +13,7 @@ Esta API está diseñada específicamente para sastres, modistas y profesionales
 - Mantener un registro organizado de todos sus clientes
 - Gestionar información de contacto junto con las medidas
 
-## 🚀 Tecnologías Utilizadas
+##  Tecnologías Utilizadas
 
 - **Node.js** - Entorno de ejecución
 - **TypeScript** - Lenguaje de programación
@@ -24,7 +24,7 @@ Esta API está diseñada específicamente para sastres, modistas y profesionales
 - **Morgan** - Logger de peticiones HTTP
 - **CORS** - Manejo de peticiones entre dominios
 
-## 📦 Instalación
+##  Instalación
 
 ### Prerrequisitos
 
@@ -94,7 +94,7 @@ La API almacena las siguientes medidas corporales (todas en centímetros):
 | **LM** | Largo de Manga | Desde el hombro hasta la muñeca |
 | **LSH** | Largo de Short | Desde la cintura hasta el largo deseado del short |
 
-## 🛣️ Endpoints de la API
+##  Endpoints de la API
 
 ### URL Base
 ```
@@ -124,7 +124,7 @@ curl http://localhost:4000/
 
 ---
 
-### 2. 👥 Obtener Todos los Clientes
+### 2.  Obtener Todos los Clientes
 
 #### `GET /api/v1/users`
 Obtiene la lista completa de todos los clientes con sus medidas.
@@ -166,7 +166,7 @@ curl http://localhost:4000/api/v1/users
 
 ---
 
-### 3. 🔍 Obtener Cliente por ID
+### 3.  Obtener Cliente por ID
 
 #### `GET /api/v1/users/:id`
 Obtiene la información y medidas de un cliente específico.
@@ -311,7 +311,7 @@ curl -X POST http://localhost:4000/api/v1/users/create \
 
 ---
 
-### 5. ✏️ Actualizar Cliente
+### 5.  Actualizar Cliente
 
 #### `PATCH /api/v1/users/update/:id`
 Actualiza la información y/o medidas de un cliente existente.
@@ -407,7 +407,7 @@ curl -X PATCH http://localhost:4000/api/v1/users/update/507f1f77bcf86cd799439011
 
 ---
 
-### 6. 🗑️ Eliminar Cliente
+### 6.  Eliminar Cliente
 
 #### `DELETE /api/v1/users/delete/:id`
 Elimina un cliente y todas sus medidas de la base de datos.
@@ -469,7 +469,7 @@ La API utiliza los siguientes códigos de estado:
 | `404` | Not Found - Recurso no encontrado |
 | `500` | Internal Server Error - Error en el servidor |
 
-## 📝 Ejemplos de Uso con JavaScript/TypeScript
+##  Ejemplos de Uso con JavaScript/TypeScript
 
 ### Ejemplo con Fetch API
 
@@ -627,20 +627,20 @@ API-REST-TYPESCRIPT/
 └── README.md             # Este archivo
 ```
 
-## 🛠️ Scripts Disponibles
+##  Scripts Disponibles
 
 ```bash
 # Modo desarrollo con recarga automática
-npm run dev
+pnpm run dev
 
 # Compilar TypeScript a JavaScript
-npm run build
+pnpm run build
 
 # Ejecutar en producción
-npm start
+pnpm start
 
 # Ejecutar linter
-npm run lint
+pnpm run lint
 ```
 
 ## 🐳 Docker
@@ -655,7 +655,7 @@ docker build -t api-medidas-confeccion .
 docker run -p 4000:4000 --env-file .env api-medidas-confeccion
 ```
 
-## 📚 Validaciones
+##  Validaciones
 
 - El email debe ser único en la base de datos
 - Todos los campos de medidas son requeridos
@@ -663,7 +663,7 @@ docker run -p 4000:4000 --env-file .env api-medidas-confeccion
 - El nombre, email y teléfono son campos obligatorios
 - El body no puede estar vacío en peticiones POST y PATCH
 
-## 🤝 Contribuir
+##  Contribuir
 
 1. Fork el proyecto
 2. Crea tu rama de características (`git checkout -b feature/AmazingFeature`)
@@ -675,14 +675,12 @@ docker run -p 4000:4000 --env-file .env api-medidas-confeccion
 
 Este proyecto está bajo la Licencia ISC.
 
-## 👤 Autor
+##  Autor
 
-Desarrollado por programadorisgod
+ programadorisgod - Camidev
 
-## 📧 Soporte
+##  Soporte
 
 Si tienes alguna pregunta o problema, por favor abre un issue en el repositorio.
 
 ---
-
-**¡Feliz confección! 👔✂️📏**

@@ -1,88 +1,88 @@
 import { Request, Response } from "express";
 import { handlerError } from "../utils/handlerError";
 import {
-  createUser,
-  deleteUser,
-  findAllUsers,
-  findByIdUser,
-  updateUser,
+    createUser,
+    deleteUser,
+    findAllUsers,
+    findByIdUser,
+    updateUser,
 } from "../services/users";
 
 export const findById = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
+    try {
+        const { id } = req.params;
 
-    const user = await findByIdUser(id);
+        const user = await findByIdUser(id);
 
-    if (!user) {
-      res.status(404).json({ msg: "id is malformed" });
-      return;
+        if (!user) {
+            res.status(404).json({ msg: "id is malformed" });
+            return;
+        }
+
+        res.status(200).json({ user });
+    } catch (error: any) {
+        handlerError(error, res);
     }
-
-    res.status(200).json({ user });
-  } catch (error: any) {
-    handlerError(error, res);
-  }
 };
 
 export const findAll = async (_req: Request, res: Response) => {
-  try {
-    const users = await findAllUsers();
+    try {
+        const users = await findAllUsers();
 
-    res.status(200).json({ users });
-  } catch (error) {
-    handlerError(error, res);
-  }
+        res.status(200).json({ users });
+    } catch (error) {
+        handlerError(error, res);
+    }
 };
 
 export const create = async (req: Request, res: Response) => {
-  try {
-    const user = req.body;
+    try {
+        const user = req.body;
+        console.log(user);
+        const newUser = await createUser(user);
 
-    const newUser = await createUser(user);
-
-    res.status(201).json({ newUser });
-  } catch (error) {
-    handlerError(error, res);
-  }
+        res.status(201).json({ newUser });
+    } catch (error) {
+        handlerError(error, res);
+    }
 };
 
 export const update = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
+    try {
+        const { id } = req.params;
 
-    const user = req.body;
+        const user = req.body;
 
-    const userExist = await findByIdUser(id);
+        const userExist = await findByIdUser(id);
 
-    if (!userExist) {
-      handlerError(null, res, "User not found", 404);
-      return;
+        if (!userExist) {
+            handlerError(null, res, "User not found", 404);
+            return;
+        }
+
+        const userUpdated = await updateUser(id, user);
+
+        res.status(200).json({ userUpdated });
+    } catch (error) {
+        handlerError(error, res);
     }
-
-    const userUpdated = await updateUser(id, user);
-
-    res.status(200).json({ userUpdated });
-  } catch (error) {
-    handlerError(error, res);
-  }
 };
 
 export const deleteUserById = async (req: Request, res: Response) => {
-  try {
-    const { id } = req.params;
+    try {
+        const { id } = req.params;
 
-    const user = await findByIdUser(id);
+        const user = await findByIdUser(id);
 
-    if (!user) {
-      handlerError(null, res, "User not found", 404);
-      return;
+        if (!user) {
+            handlerError(null, res, "User not found", 404);
+            return;
+        }
+
+        const userDeleted = await deleteUser(id);
+
+        res.status(200).json({ userDeleted });
+    } catch (error) {
+        handlerError(error, res);
     }
-
-    const userDeleted = await deleteUser(id);
-
-    res.status(200).json({ userDeleted });
-  } catch (error) {
-    handlerError(error, res);
-  }
 };
