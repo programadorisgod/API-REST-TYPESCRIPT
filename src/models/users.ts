@@ -18,7 +18,7 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        measueres: {
+        measures: {
             AE: {
                 type: Number,
                 required: true,

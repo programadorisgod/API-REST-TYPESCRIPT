@@ -143,7 +143,7 @@ curl http://localhost:4000/api/v1/users
       "name": "María González",
       "email": "maria.gonzalez@email.com",
       "phoneNumber": "+52 55 1234 5678",
-      "measueres": {
+      "measures": {
         "AE": 38,
         "TD": 42,
         "TE": 40,
@@ -187,7 +187,7 @@ curl http://localhost:4000/api/v1/users/507f1f77bcf86cd799439011
     "name": "María González",
     "email": "maria.gonzalez@email.com",
     "phoneNumber": "+52 55 1234 5678",
-    "measueres": {
+    "measures": {
       "AE": 38,
       "TD": 42,
       "TE": 40,
@@ -234,7 +234,7 @@ curl -X POST http://localhost:4000/api/v1/users/create \
     "name": "Carlos Rodríguez",
     "email": "carlos.rodriguez@email.com",
     "phoneNumber": "+52 55 9876 5432",
-    "measueres": {
+    "measures": {
       "AE": 42,
       "TD": 45,
       "TE": 43,
@@ -257,7 +257,7 @@ curl -X POST http://localhost:4000/api/v1/users/create \
   "name": "Carlos Rodríguez",
   "email": "carlos.rodriguez@email.com",
   "phoneNumber": "+52 55 9876 5432",
-  "measueres": {
+  "measures": {
     "AE": 42,
     "TD": 45,
     "TE": 43,
@@ -282,7 +282,7 @@ curl -X POST http://localhost:4000/api/v1/users/create \
     "name": "Carlos Rodríguez",
     "email": "carlos.rodriguez@email.com",
     "phoneNumber": "+52 55 9876 5432",
-    "measueres": {
+    "measures": {
       "AE": 42,
       "TD": 45,
       "TE": 43,
@@ -331,7 +331,7 @@ curl -X PATCH http://localhost:4000/api/v1/users/update/507f1f77bcf86cd799439011
   -d '{
     "name": "María González Pérez",
     "phoneNumber": "+52 55 1234 9999",
-    "measueres": {
+    "measures": {
       "AE": 38,
       "TD": 42,
       "TE": 40,
@@ -353,7 +353,7 @@ curl -X PATCH http://localhost:4000/api/v1/users/update/507f1f77bcf86cd799439011
 {
   "name": "María González Pérez",
   "phoneNumber": "+52 55 1234 9999",
-  "measueres": {
+  "measures": {
     "AE": 38,
     "TD": 42,
     "TE": 40,
@@ -378,7 +378,7 @@ curl -X PATCH http://localhost:4000/api/v1/users/update/507f1f77bcf86cd799439011
     "name": "María González Pérez",
     "email": "maria.gonzalez@email.com",
     "phoneNumber": "+52 55 1234 9999",
-    "measueres": {
+    "measures": {
       "AE": 38,
       "TD": 42,
       "TE": 40,
@@ -428,7 +428,7 @@ curl -X DELETE http://localhost:4000/api/v1/users/delete/507f1f77bcf86cd79943901
     "name": "María González",
     "email": "maria.gonzalez@email.com",
     "phoneNumber": "+52 55 1234 5678",
-    "measueres": {
+    "measures": {
       "AE": 38,
       "TD": 42,
       "TE": 40,
@@ -485,7 +485,7 @@ async function crearCliente() {
       name: "Ana López",
       email: "ana.lopez@email.com",
       phoneNumber: "+52 55 5555 5555",
-      measueres: {
+      measures: {
         AE: 36,
         TD: 40,
         TE: 38,
@@ -554,7 +554,7 @@ const crearCliente = async () => {
       name: "Pedro Martínez",
       email: "pedro.martinez@email.com",
       phoneNumber: "+52 55 7777 7777",
-      measueres: {
+      measures: {
         AE: 44,
         TD: 48,
         TE: 46,
