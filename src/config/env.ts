@@ -2,7 +2,7 @@ import z from "zod";
 
 const envVariables = z.object({
   CONEXION_STRING: z.url().trim(),
-  PORT: z.string().min(4).max(7),
+  PORT: z.string().min(4).max(7).optional(),
 });
 
 const { success, data, error } = envVariables.safeParse(process.env);

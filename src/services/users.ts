@@ -4,7 +4,13 @@ import { CustomError } from "../utils/handlerError";
 
 export const createUser = async (user: IUser) => {
     try {
-        const newUser = await User.create(user);
+        // Strip null/empty email so the sparse unique index works correctly
+        const sanitized = { ...user };
+        if (!sanitized.email) {
+            delete sanitized.email;
+        }
+
+        const newUser = await User.create(sanitized);
 
         return newUser;
     } catch (error: any) {
